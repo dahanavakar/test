@@ -42,7 +42,7 @@ jobs:
       - run:
           name: deploy over SSH
           command: |
-                 ssh root@54.188.36.123 'cd ~/node.js.test && git pull && pm2 restart app.js'
+                 ssh ubuntu@54.188.36.123 'cd ~/node.js.test && git pull && pm2 restart app.js'
 workflows:
   version: 2
   build-and-deploy:
