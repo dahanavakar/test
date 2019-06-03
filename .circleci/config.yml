@@ -36,7 +36,8 @@ jobs:
       - run: yarn test
       
   deploy:
-   steps:
+    machine: true
+    steps:
       - run:
           name: Deploy Over SSH
           command: |
