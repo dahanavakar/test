@@ -35,11 +35,14 @@ jobs:
 
       # run tests!
       - run: yarn test
+  deploy:
+    machine:
+      enabled: true
+    steps:
       - run:
-          name: deploy over SSH
+          name: Deploy Over SSH
           command: |
-                ssh ubuntu@54.188.36.123 'cd ~/test && git pull && pm2 restart app.js'
- 
+            ssh deployment@3.213.165.5 'cd ~/node.js.test && git pull && pm2 restart app.js'
 
 
                               
