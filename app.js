@@ -6,7 +6,7 @@ const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
 
-    res.end('Hello World from AWS3\n');
+    res.end('Hello World from AWS again\n');
 });
 
 server.listen(APP_PORT, function () {
