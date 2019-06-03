@@ -1,13 +1,12 @@
+---
 # Javascript Node CircleCI 2.0 configuration file
-#
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
 version: 2
 jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:8.11.4
+      - image: circleci/node:8.10
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -35,6 +34,7 @@ jobs:
 
       # run tests!
       - run: yarn test
+      
   deploy:
     machine:
       enabled: true
@@ -43,6 +43,3 @@ jobs:
           name: Deploy Over SSH
           command: |
             ssh deployment@3.213.165.5 'cd ~/node.js.test && git pull && pm2 restart app.js'
-
-
-                              
